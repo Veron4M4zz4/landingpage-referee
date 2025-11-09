@@ -1,54 +1,32 @@
+// src/components/Hero.tsx
 import Image from "next/image";
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-[#0C0C0C]"
+      className="relative overflow-hidden isolate bg-[#0C0C0C]"
       style={{
         backgroundImage:
           "radial-gradient(1200px 600px at 50% 120%, rgba(0,0,0,0.35), transparent 40%), linear-gradient(180deg, #111111, #0C0C0C)",
       }}
     >
-      {/* ====== CÍRCULOS ALINHADOS (dentro da seção) ====== */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-0 top-0 w-full h-full flex items-center justify-start pl-[8%] -z-10"
-      >
-        <div className="relative w-[760px] h-[760px]">
-          {/* círculo esquerdo */}
-          <Image
-            src="/assets/eclipse-circle.svg"
-            alt=""
-            width={760}
-            height={760}
-            className="absolute left-[-120px] top-[-80px] opacity-40"
-            priority
-          />
-          {/* círculo direito */}
-          <Image
-            src="/assets/eclipse-circle.svg"
-            alt=""
-            width={760}
-            height={760}
-            className="absolute left-[140px] top-[-80px] opacity-35"
-            priority
-          />
-          {/* círculo central menor */}
-          <Image
-            src="/assets/eclipse-circle.svg"
-            alt=""
-            width={480}
-            height={480}
-            className="absolute left-[140px] top-[120px] opacity-25"
-            priority
-          />
-        </div>
+      {/* ===== ÚNICO CÍRCULO ATRÁS DO MOCKUP ===== */}
+      <div aria-hidden className="absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/assets/circle-hero.svg"
+          alt=""
+          width={1200}
+          height={1200}
+          // posicione fino conforme o seu Figma
+          className="absolute left-[-220px] top-[-160px] opacity-35"
+          priority
+        />
       </div>
 
-      {/* ====== CONTEÚDO ====== */}
+      {/* ===== CONTEÚDO ===== */}
       <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 py-16 md:py-24 grid md:grid-cols-2 items-center gap-12">
-        {/* Coluna esquerda: mockup */}
+        {/* ESQUERDA: mockup */}
         <div className="relative flex justify-center md:justify-start">
           <Image
             src="/assets/iphone14.svg"
@@ -60,7 +38,7 @@ export default function Hero() {
           />
         </div>
 
-        {/* Coluna direita: texto e CTAs */}
+        {/* DIREITA: texto/CTAs */}
         <div className="space-y-6 text-left">
           <p className="uppercase tracking-[0.25em] text-[11px] text-slate-400">
             DISPONÍVEL EM BREVE

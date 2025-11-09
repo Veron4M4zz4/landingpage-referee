@@ -4,28 +4,30 @@ import Image from "next/image";
 const passos = [
   "Baixe o aplicativo na loja do seu celular.",
   "Cadastre-se como Árbitro.",
-  "Construa seu currículo de árbitro por meio das nossas curtas (gratuitas).",
-  "Ganhe dinheiro apitando na hora que quiser!",
+  "Construa seu currículo de árbitro por meio dos nossos cursos (gratuitos).",
+  "Ganhe dinheiro apitando a hora que quiser!",
 ];
 
 export default function WorkWithUs() {
   return (
     <section
       id="trabalhe-conosco"
-      className="relative overflow-hidden py-16 md:py-24"
+      className="relative overflow-hidden isolate py-16 md:py-24"
+      style={{ background: "linear-gradient(180deg,#151515 0%,#101010 100%)" }}
     >
-      {/* LINES como background-image */}
+      {/* LINES – ÚNICA CAMADA (sem duplicação) */}
       <div
         aria-hidden
         className="
-          absolute inset-0 pointer-events-none opacity-25
+          absolute inset-0 z-0 pointer-events-none opacity-35
           bg-[url('/assets/lines-work.svg')] bg-no-repeat
-          bg-right md:bg-[length:1400px_auto] bg-[length:1100px_auto]
+          md:bg-[length:1600px_auto] bg-[length:1200px_auto]
+          md:bg-[position:70%_8%] bg-[position:65%_12%]
         "
       />
 
-      <div className="relative mx-auto w-full max-w-[1280px] px-6 grid md:grid-cols-2 items-center gap-12">
-        {/* ESQUERDA: mockup */}
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 grid md:grid-cols-2 items-center gap-12">
+        {/* ESQUERDA — Mockup + glow */}
         <div className="relative flex justify-center md:justify-start">
           <div
             aria-hidden
@@ -45,8 +47,8 @@ export default function WorkWithUs() {
           />
         </div>
 
-        {/* DIREITA: texto */}
-        <div className="relative space-y-8">
+        {/* DIREITA — Título, passos e CTA */}
+        <div className="space-y-8">
           <h2 className="text-white text-3xl md:text-5xl font-semibold">
             Trabalhe Conosco
           </h2>

@@ -10,7 +10,7 @@ export default function Community() {
       <div
         aria-hidden
         className="
-          absolute inset-0 pointer-events-none opacity-20
+          absolute inset-0 pointer-events-none opacity-80
           bg-[url('/assets/lines-community.svg')] bg-no-repeat
           bg-left md:bg-[length:1200px_auto] bg-[length:900px_auto]
         "
